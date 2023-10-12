@@ -1,7 +1,6 @@
 
 class Solution {
  
-    // Function to print in spiral order
     public static List<Integer> spiralOrder(int[][] matrix)
     {
         List<Integer> ans = new ArrayList<Integer>();
@@ -15,7 +14,7 @@ class Solution {
         int[] dc = { 1, 0, -1, 0 };
         int x = 0, y = 0, di = 0;
  
-        // Iterate from 0 to R * C - 1
+      
         for (int i = 0; i < m * n; i++) {
             ans.add(matrix[x][y]);
             seen[x][y] = true;
