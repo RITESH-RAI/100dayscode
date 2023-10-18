@@ -21,8 +21,6 @@ class Solution {
     return ans;
   }
 
-  // Finds the first index l s.t A.get(l) > target.
-  // Returns A.size() if can't find.
   private int firstGreater(List<Integer> A, int target) {
     int l = 0;
     int r = A.size();
@@ -36,8 +34,7 @@ class Solution {
     return l;
   }
 
-  // Find the first index l s.t A.get(l) >= target
-  // Returns A.size() if can't find
+
   private int firstGreaterEqual(List<Integer> A, int target) {
     int l = 0;
     int r = A.size();
