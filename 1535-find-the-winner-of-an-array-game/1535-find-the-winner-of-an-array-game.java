@@ -23,7 +23,7 @@ class Solution {
                 count=1;
                 ele=arr[i];
                 }
-                //System.out.println(ele);
+               
         }
         return ele;
     }
