@@ -8,6 +8,7 @@ class Solution {
         while(right<n){
             if(hm.containsKey(s.charAt(right))){
                 left= Math.max(hm.get(s.charAt(right))+1,left);
+    
             }
                 hm.put(s.charAt(right),right);
                 len=Math.max(len,right-left+1);
