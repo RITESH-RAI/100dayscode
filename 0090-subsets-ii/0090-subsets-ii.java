@@ -1,29 +1,21 @@
 class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
-           List<List<Integer>> resultList = new ArrayList<>();
-    Arrays.sort(nums);
-
-    // Start backtracking from the beginning
-    backtrack(resultList, new ArrayList<>(), nums, 0);
-    return resultList;
+        Arrays.sort(nums);
+        List<List<Integer>> ans=new ArrayList<>();
+        solve(nums,0,new ArrayList<Integer>(),ans);
+        return ans;
     }
-     public void backtrack(List<List<Integer>> resultSets, List<Integer> tempSet,
-                         int[] nums, int start) {
-    // If the set is already present, just continue
-    if (resultSets.contains((tempSet)))
-      return;
-
-    resultSets.add(new ArrayList<>(tempSet));
-
-    for (int i = start; i < nums.length; i++) {
-      // Case of including the number
-      tempSet.add(nums[i]);
-
-      // Backtrack the new subset
-      backtrack(resultSets, tempSet, nums, i + 1);
-
-      // Case of not-including the number
-      tempSet.remove(tempSet.size() - 1);
-    }
+    public void solve(int nums[],int i, List<Integer> temp, List<List<Integer>> ans){
+        if(i==nums.length){
+            ans.add(new ArrayList<>(temp));
+            return;
+        }
+        temp.add(nums[i]);
+        solve(nums,i+1,temp,ans);
+        temp.remove(temp.size()-1);
+        while(i<nums.length-1&&nums[i]==nums[i+1]){
+            i++;
+        }
+        solve(nums,i+1,temp,ans);
     }
 }
